@@ -45,8 +45,9 @@ body {
 }
 
 section {
-  padding-block: 10rem;
+  padding-block: 5rem;
 }
+
 /*--- CLASSES ---*/
 .wrapper {
   width: 37.5rem;
@@ -54,12 +55,13 @@ section {
   margin-right: auto;
 }
 
-/*==== HEADER =======================================*/
-header {
+/*==== HOME =======================================*/
+#home {
   padding-top: calc(4.1rem + var(--nav-height));
 }
+
 /* Pseudo Element */
-header::before {
+#home::before {
   content: '';
   width: 100%;
   height: calc(108rem + var(--nav-height));
@@ -72,20 +74,20 @@ header::before {
   z-index: -1;
 }
 
-header h4 {
+#home h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
 }
 
-header h1 {
+#home h1 {
   font-size: 3.4rem;
   line-height: 130%;
   color: var(--haedLine);
   margin-bottom: 2.4rem;
 }
 
-header p {
+#home p {
   font-size: 1.8rem;
   line-height: 150%;
   font-weight: 400;
@@ -94,7 +96,7 @@ header p {
   margin-bottom: 3.2rem;
 }
 
-header button {
+#home button {
   background-color: var(--primary-color);
 
   border: none;
@@ -118,14 +120,14 @@ header button {
   margin-right: auto;
 }
 
-header img {
+#home img {
   width: 26.4rem;
   display: block;
   margin-inline: auto;
   object-position: 0px 1.7rem;
 }
 
-.stats {
+#home .stats {
   width: 32.5rem;
   padding-block: 4rem; /*padding em cima e em baixo*/
   margin-inline: auto; /*magem referente às extremidades*/
@@ -140,7 +142,7 @@ header img {
   gap: 6rem;
 }
 
-.stat h3 {
+#home .stat h3 {
   font-size: 4.8rem;
   color: var(--haedLine);
   line-height: 130%;
@@ -148,13 +150,58 @@ header img {
   margin-bottom: 0.4rem;
 }
 
-.stat p {
+#home .stat p {
   margin: 0;
   color: var(--primary-color);
   font-size: 1.6rem;
   text-align: center;
   line-height: 150%;
 }
+/*==== SERVICES ====================================*/
+/*
+  ->id's são mais espeficicos que classes, e são refenciados com hash (#)
+  -> Classes são mais gerais sendo menos prioritárias, sendo referenciadas com ponto (.)    */
+  #services header h4 {
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+  
+    color: var(--primary-color);
+  
+    text-transform: uppercase;
+  
+    margin-bottom: 1.6rem;
+  }
+  
+  #services header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+  
+    color: var(--haedLine);
+  
+    margin-bottom: 6rem;
+  }
+  
+  #services .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem; /*Propriedade GAP só é liberada sob o uso de Display Flex*/
+  }
+  
+  .card {
+    padding: 2.4rem;
+    text-align: left;
+  
+    background: white;
+  
+    border: 1px solid var(--brand-light);
+    border-radius: 0.6rem;
+  }
+  
+  .card h3 {
+    margin-block: 1.6rem;
+  }
+  
 /*==== NAVIGATION =======================================*/
 nav {
   display: flex;
@@ -165,6 +212,8 @@ nav {
   top: 0%;
   left: 50%;
   transform: translateX(-50%);
+
+  z-index: 100;
 }
 
 nav .wrapper {
@@ -177,7 +226,7 @@ nav.scroll {
   background: var(--primary-color);
   width: 100vw;
   position: fixed;
-  top: 0;
+  top: 0;  
 }
 
 nav.scroll svg:nth-child(1) path {
@@ -188,14 +237,16 @@ nav.scroll svg:nth-child(2) path {
   stroke: white;
 }
 
+
 nav.scroll button {
-  z-index: 100;
+  background: var(--primary-color);
+  stroke: white;
 }
 
 nav button {
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 /*==== NAVIGATION MENU EXPANDED ====================================*/
@@ -224,6 +275,11 @@ body.menu-expanded .close-menu {
   visibility: visible;
 }
 
+.menu{
+  transform: translateX(100%);
+  transition: opacity 400ms ;
+}
+
 body.menu-expanded .menu {
   position: fixed;
   top: 0%;
@@ -235,6 +291,10 @@ body.menu-expanded .menu {
   height: 100vh;
 
   padding-top: var(--nav-height);
+  /* Fazendo trazição para o menu */
+  transition: transform 800ms ;
+  transform: translateX(0);
+  
 }
 
 body.menu-expanded nav {
@@ -286,7 +346,7 @@ body.menu-expanded nav {
 body.menu-expanded .logo,
 body.menu-expanded nav button {
   position: relative;
-  z-index: 4;
+  z-index: 6;
 }
 
 body.menu-expanded .logo path {
@@ -294,50 +354,5 @@ body.menu-expanded .logo path {
 }
 
 body.menu-expanded button path {
-  stroke: white;
-}
-
-/*==== SERVICES ====================================*/
-/*
-  ->id's são mais espeficicos que classes, e são refenciados com hash (#)
-  -> Classes são mais gerais sendo menos prioritárias, sendo referenciadas com ponto (.)    */
-#services header h4 {
-  font-size: 1.4rem;
-  line-height: 150%;
-  letter-spacing: 0.08rem;
-
-  color: var(--primary-color);
-
-  text-transform: uppercase;
-
-  margin-bottom: 1.6rem;
-}
-
-#services header h2 {
-  font-size: 3rem;
-  line-height: 3.9rem;
-
-  color: var(--haedLine);
-
-  margin-bottom: 6rem;
-}
-
-#services .cards {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem; /*Propriedade GAP só é liberada sob o uso de Display Flex*/
-}
-
-.card {
-  padding: 2.4rem;
-  text-align: left;
-
-  background: white;
-
-  border: 1px solid var(--brand-light);
-  border-radius: 0.6rem;
-}
-
-.card h3 {
-  margin-block: 1.6rem;
+  fill: white;
 }
