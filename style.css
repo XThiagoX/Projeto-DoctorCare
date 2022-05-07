@@ -22,7 +22,7 @@
   font-size: 62.5%; /* 1 rem = 10px , 100% = 16px*/
 }
 
-html{
+html {
   scroll-behavior: smooth;
   /* Scroll: Rolagem ; Behavior: Comportamento ; Smooth: Suave*/
 }
@@ -44,7 +44,7 @@ body {
   background: var(--bg-light);
 }
 
-section{
+section {
   padding-block: 10rem;
 }
 /*--- CLASSES ---*/
@@ -188,15 +188,14 @@ nav.scroll svg:nth-child(2) path {
   stroke: white;
 }
 
-nav.scroll button{
+nav.scroll button {
   z-index: 100;
 }
 
-nav button{
+nav button {
   background: none;
   border: none;
   cursor: pointer;
-  
 }
 
 /*==== NAVIGATION MENU EXPANDED ====================================*/
@@ -204,11 +203,11 @@ ul {
   list-style: none;
 }
 
-body.menu-expanded{
+body.menu-expanded {
   overflow: hidden;
 }
 
-body.menu-expanded > :not(nav){
+body.menu-expanded > :not(nav) {
   display: none;
 }
 
@@ -242,24 +241,24 @@ body.menu-expanded nav {
   position: relative;
 }
 
-.menu ul:nth-child(1){
+.menu ul:nth-child(1) {
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
 
   margin-top: 6rem;
-  
+
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.1rem;
 }
 
-.menu ul li a{
+.menu ul li a {
   color: white;
   text-decoration: none;
 }
 
-.menu .button{
+.menu .button {
   background: white;
   border-radius: 4rem;
   font-weight: 700;
@@ -267,25 +266,25 @@ body.menu-expanded nav {
   line-height: 2.3rem;
   text-transform: uppercase;
   text-decoration: none;
-  
+
   color: var(--primary-color);
-  
-  display: inline-block ;    
+
+  display: inline-block;
   padding: 1.6rem 3.2rem;
 
   margin-top: 4.8rem;
   margin-bottom: 8rem;
 }
 
-.social-links{
+.social-links {
   display: flex;
   gap: 3.2rem;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 body.menu-expanded .logo,
-body.menu-expanded nav button{
+body.menu-expanded nav button {
   position: relative;
   z-index: 4;
 }
@@ -302,7 +301,7 @@ body.menu-expanded button path {
 /*
   ->id's são mais espeficicos que classes, e são refenciados com hash (#)
   -> Classes são mais gerais sendo menos prioritárias, sendo referenciadas com ponto (.)    */
-#services header h4{
+#services header h4 {
   font-size: 1.4rem;
   line-height: 150%;
   letter-spacing: 0.08rem;
@@ -311,34 +310,34 @@ body.menu-expanded button path {
 
   text-transform: uppercase;
 
-  margin-bottom: 1.6rem;  
+  margin-bottom: 1.6rem;
 }
 
-#services header h2{
+#services header h2 {
   font-size: 3rem;
   line-height: 3.9rem;
 
   color: var(--haedLine);
 
-  margin-bottom: 6rem;  
+  margin-bottom: 6rem;
 }
 
-#services .cards{
+#services .cards {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;/*Propriedade GAP só é liberada sob o uso de Display Flex*/
+  gap: 3.2rem; /*Propriedade GAP só é liberada sob o uso de Display Flex*/
 }
 
-.card{
+.card {
   padding: 2.4rem;
   text-align: left;
 
   background: white;
 
   border: 1px solid var(--brand-light);
-  border-radius: 0.6rem;  
+  border-radius: 0.6rem;
 }
 
-.card h3{
+.card h3 {
   margin-block: 1.6rem;
 }
