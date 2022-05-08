@@ -7,14 +7,15 @@
 
 :root {
   /*Variávesi do CSS*/
-  --primary-color: hsl(170, 100%, 26%);
+  --matrix: 290;
+  --primary-color: hsl(var(--matrix), 100%, 26%);
   /* HSL:Cor, Saturação, Luminosidade */
   /* HSLA:Cor, Saturação, Luminosidade Opacacidade */
   --haedLine: hsl(210, 11%, 15%);
   --paragraph: hsla(210, 9%, 31%);
   --brand-beige: hsla(39, 100%, 97%);
-  --brand-light: hsla(148, 23%, 89%);
-  --brand-dark: hsla(170, 100%, 14%);
+  --brand-light: hsla(calc(var(--matrix) - 22), 23%, 89%);
+  --brand-dark: hsla(var(--matrix), 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -122,6 +123,36 @@ img{
   width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+/*==== CUSTON COLORS =======================================*/
+
+#services .card circle {
+  fill: var(--brand-light);
+}
+
+#backToTopButton circle{
+  fill: var(--primary-color);
+}
+
+#contact ul path {
+  stroke: var(--primary-color);
+} 
+/*Escolhendo partes especificas do svg para mudarem de cor, no caso as de cor #00856F (verde)*/
+#navigation .logo path[fill*="#00856F"]{
+  fill: var(--primary-color);
+}
+
+body.menu-expanded #navigation .logo path,
+#navigation.scroll .logo path[fill*="#00856F"]{
+  fill: white;
+}
+
+button.open-menu path[stroke*="#00856F"]{
+  stroke: var(--primary-color);
+}
+
+#navigation.scroll button.open-menu path[stroke*="#00856F"]{
+  stroke: white;
 }
 
 /*==== HOME =======================================*/
@@ -379,11 +410,24 @@ body.menu-expanded .menu {
   margin-bottom: 8rem;
 }
 
+.menu .button:hover{
+  background-color: var(--primary-color);
+  color:ghostwhite;
+  border: 1px solid aliceblue;
+
+  filter: brightness(1);
+  
+}
+
 .social-links {
   display: flex;
   gap: 3.2rem;
   align-items: center;
   justify-content: center;
+}
+
+.social-links a svg path{
+  stroke: "#FFFAF1";
 }
 
 body.menu-expanded .logo,
@@ -465,8 +509,28 @@ footer .logo path{
 footer p{
   color: var(--brand-beige);
   line-height: 2;
+  margin-bottom: 1.6rem;
 }
 
 footer .social-links{
   justify-content: flex-start;
+}
+/*==== BACK TO TOP BUTTON ====================================*/
+#backToTopButton{
+ position: fixed;
+ bottom: 10;
+ right: 2.5rem;
+
+ opacity: 0;
+ visibility: hidden;
+
+ transform: translateY(100%);
+ transition: 400ms;
+}
+
+#backToTopButton.show{
+  opacity: 1;
+ visibility: visible;
+
+ transform: translateY(0);
 }
