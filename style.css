@@ -14,6 +14,7 @@
   --paragraph: hsla(210, 9%, 31%);
   --brand-beige: hsla(39, 100%, 97%);
   --brand-light: hsla(148, 23%, 89%);
+  --brand-dark: hsla(170, 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -86,6 +87,36 @@ section .content p {
 img{
   max-width: 100%;
 }
+
+.button {
+  background-color: var(--primary-color);
+
+  border: none;
+  border-radius: 4rem;
+
+  margin-bottom: 6rem;
+  /* definindo o proporção para o botão */
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  display: flex; /*Display flex mexe com as caixas dentro do elemento, uma ao lado da outra ou depende da orientação*/
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem; /*GAP cra espaçoentre os elementos dentro da caixa*/ 
+
+  text-decoration: none;
+
+  transition: background 200ms; 
+}
+
+.button:hover{
+  background: var(--brand-dark);
+}
 /*--- CLASSES ---*/
 .wrapper {
   width: 37.5rem;
@@ -134,28 +165,8 @@ img{
   margin-bottom: 3.2rem;
 }
 
-#home button {
-  background-color: var(--primary-color);
-
-  border: none;
-  border-radius: 4rem;
-
-  margin-bottom: 6rem;
-
-  height: 6.2rem;
-  width: 26.3rem;
-
-  color: white;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 700;
-
-  display: flex; /*Display flex mexe com as caixas dentro do elemento, uma ao lado da outra ou depende da orientação*/
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem; /*GAP cra espaçoentre os elementos dentro da caixa*/
-  margin-left: auto;
-  margin-right: auto;
+#home .button{
+  margin-inline: auto;
 }
 
 #home img {
@@ -402,4 +413,60 @@ body.menu-expanded button path {
 #about .content p{
   margin-top: 2.4rem;
   margin-bottom: 4rem;
+}
+/*==== CONTACT ====================================*/
+
+#contact {
+  text-align: left;  
+}
+
+#contact header{
+  margin-bottom: 3.2rem;
+}
+
+#contact ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+
+#contact ul li{
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/*==== FOOTER ====================================*/
+footer{
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+
+  text-align: left;
+  
+  color: white;  
+}
+/*o tag 'a' tem propriedades disply inline, e isso faz com que ela não aceite outras propriedades como margin etc.*/
+footer .logo{
+  display: inline-block;/*inline-block manten as propriedades padrão e adiciona outras para serrem usadas*/
+  margin-bottom: 2.4rem;
+}
+
+footer .logo svg{
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path{
+  fill: white;
+}
+
+footer p{
+  color: var(--brand-beige);
+  line-height: 2;
+}
+
+footer .social-links{
+  justify-content: flex-start;
 }
