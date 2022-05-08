@@ -48,6 +48,44 @@ section {
   padding-block: 5rem;
 }
 
+section header h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+
+  margin-bottom: 1.6rem;
+}
+
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--headline);
+}
+
+section header h1 {
+  font-size: 3.4rem;
+  color: var(--headline);
+  line-height: 130%;
+
+  margin-bottom: 2.4rem;
+}
+
+section .content p {
+  font-weight: 400;
+  font-size: 1.6rem;  
+  line-height: 150%;  
+
+  color: var(--paragraph);
+}
+
+img{
+  max-width: 100%;
+}
 /*--- CLASSES ---*/
 .wrapper {
   width: 37.5rem;
@@ -161,46 +199,46 @@ section {
 /*
   ->id's são mais espeficicos que classes, e são refenciados com hash (#)
   -> Classes são mais gerais sendo menos prioritárias, sendo referenciadas com ponto (.)    */
-  #services header h4 {
-    font-size: 1.4rem;
-    line-height: 150%;
-    letter-spacing: 0.08rem;
-  
-    color: var(--primary-color);
-  
-    text-transform: uppercase;
-  
-    margin-bottom: 1.6rem;
-  }
-  
-  #services header h2 {
-    font-size: 3rem;
-    line-height: 3.9rem;
-  
-    color: var(--haedLine);
-  
-    margin-bottom: 6rem;
-  }
-  
-  #services .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 3.2rem; /*Propriedade GAP só é liberada sob o uso de Display Flex*/
-  }
-  
-  .card {
-    padding: 2.4rem;
-    text-align: left;
-  
-    background: white;
-  
-    border: 1px solid var(--brand-light);
-    border-radius: 0.6rem;
-  }
-  
-  .card h3 {
-    margin-block: 1.6rem;
-  }
+#services header h4 {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+
+  margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--haedLine);
+
+  margin-bottom: 6rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem; /*Propriedade GAP só é liberada sob o uso de Display Flex*/
+}
+
+.card {
+  padding: 2.4rem;
+  text-align: left;
+
+  background: white;
+
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+}
+
+.card h3 {
+  margin-block: 1.6rem;
+}
   
 /*==== NAVIGATION =======================================*/
 nav {
@@ -213,6 +251,8 @@ nav {
   left: 50%;
   transform: translateX(-50%);
 
+  width: 100vw;
+
   z-index: 100;
 }
 
@@ -224,7 +264,7 @@ nav .wrapper {
 
 nav.scroll {
   background: var(--primary-color);
-  width: 100vw;
+  
   position: fixed;
   top: 0;  
 }
@@ -233,7 +273,7 @@ nav.scroll svg:nth-child(1) path {
   fill: white;
 }
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll .open-menu path {
   stroke: white;
 }
 
@@ -256,10 +296,6 @@ ul {
 
 body.menu-expanded {
   overflow: hidden;
-}
-
-body.menu-expanded > :not(nav) {
-  display: none;
 }
 
 .menu,
@@ -295,10 +331,6 @@ body.menu-expanded .menu {
   transition: transform 800ms ;
   transform: translateX(0);
   
-}
-
-body.menu-expanded nav {
-  position: relative;
 }
 
 .menu ul:nth-child(1) {
@@ -355,4 +387,19 @@ body.menu-expanded .logo path {
 
 body.menu-expanded button path {
   fill: white;
+}
+
+/*==== ABOUT =======================================*/
+#about{
+  text-align: left;
+  background-color: var(--brand-beige);
+}
+
+#about header h2{
+  margin-bottom: 2.4rem;
+}
+
+#about .content p{
+  margin-top: 2.4rem;
+  margin-bottom: 4rem;
 }
